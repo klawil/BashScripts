@@ -3,22 +3,24 @@ green='\E[32m'
 red='\E[31m'
 blue='\E[34m'
 normal='\E[m'
+localip='192.168.0.12'
+basecommand='rsync -avzRn --files-from=/home/william/.include.rsync /'
 echo "Select a server:"
-echo -e "  ${green}[1]${normal} DigitalOcean Server (Ubuntu 14.04 LAMP, SSH tunnel on 9999)"
-echo -e "  ${green}[2]${normal} Home Server Remote (Ubuntu 14.04 LAMP, SSH tunnel on 9999)"
-echo -e "  ${green}[3]${normal} Home Server Local (Ubuntu 14.04 LAMP)"
+echo -e "  ${green}[1]${normal} Backup to local server"
+echo -e "  ${green}[2]${normal} Backup to remote server"
+echo -e "  ${green}[3]${normal} Restore from local server"
 echo -e "  ${green}[4]${normal} Exit"
 echo -en "Select Option: "
-read servernum
-case $servernum in
+read optionnum
+case $optionnum in
 1)
-	ssh -D 9999 william@forensicsdb.com
+	$basecommand master@${localip}:/media/Files/laptop
 	;;
 2)
-	ssh -D 9999 -p 1222 master@bus.opfoolbird.com
+	$basecommand master@bus.opfoolbird.com:1222/media/Files/laptop
 	;;
 3)
-	ssh master@192.168.0.12
+	rsync -avzR master@${localip}:/media/Files/laptop /
 	;;
 4)
 	;;
