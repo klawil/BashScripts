@@ -3,6 +3,7 @@ green='\E[32m'
 red='\E[31m'
 blue='\E[34m'
 normal='\E[m'
+localip='192.168.0.12'
 echo "Select a server:"
 echo -e "  ${green}[1]${normal} DigitalOcean Server (Ubuntu 14.04 LAMP, SSH tunnel on 9999)"
 echo -e "  ${green}[2]${normal} Home Server Remote (Ubuntu 14.04 LAMP, SSH tunnel on 9999)"
@@ -18,7 +19,7 @@ case $servernum in
 	ssh -D 9999 -p 1222 master@bus.opfoolbird.com
 	;;
 3)
-	ssh master@192.168.0.12
+	ssh master@$localip
 	;;
 4)
 	;;
