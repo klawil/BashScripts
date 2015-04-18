@@ -4,7 +4,8 @@ red='\E[31m'
 blue='\E[34m'
 normal='\E[m'
 localip='192.168.0.12'
-basecommand='rsync -avzRn --files-from=/home/william/.include.rsync /'
+basecommand="rsync -avzR $(cat ~/.include.rsync)"
+includefiles=$(cat ~/.include.rsync)
 echo "Select a server:"
 echo -e "  ${green}[1]${normal} Backup to local server"
 echo -e "  ${green}[2]${normal} Backup to remote server"
@@ -17,7 +18,7 @@ case $optionnum in
 	$basecommand master@${localip}:/media/Files/laptop
 	;;
 2)
-	$basecommand master@bus.opfoolbird.com:1222/media/Files/laptop
+	$basecommand master@home.opfoolbird.com:1222/media/Files/laptop
 	;;
 3)
 	rsync -avzR master@${localip}:/media/Files/laptop /
