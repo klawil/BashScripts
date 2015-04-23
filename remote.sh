@@ -16,10 +16,10 @@ case $servernum in
 	ssh -D 9999 william@forensicsdb.com
 	;;
 2)
-	ssh -D 9999 -p 1222 master@home.opfoolbird.com
+	ssh -D 9999 -p 1222 -X master@home.opfoolbird.com
 	;;
 3)
-	ssh master@$localip
+	ssh -X master@$localip
 	;;
 4)
 	;;
