@@ -5,6 +5,9 @@ for x in $(sudo find / -name ".git"); do
 	dir=${x%$y}
 	echo $dir
 	cd $dir
-	git commit
+	git fetch origin
+	git diff origin/master
+	#git commit
+	#git pull --dry-run
 done
 cd $olddir
