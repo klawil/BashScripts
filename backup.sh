@@ -17,7 +17,7 @@ case $optionnum in
 	$basecommand master@${localip}:/media/Files/laptop | grep --line-buffered '<\|>'
 	;;
 2)
-	$basecommand master@home.opfoolbird.com:1222/media/Files/laptop | grep --line-buffered '<\|>'
+	$basecommand -e 'ssh -p 1222' master@home.opfoolbird.com:/media/Files/laptop | grep --line-buffered '<\|>'
 	;;
 3)
 	rsync -avzR master@${localip}:/media/Files/laptop /
