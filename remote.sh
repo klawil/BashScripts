@@ -3,7 +3,7 @@ green='\E[32m'
 red='\E[31m'
 blue='\E[34m'
 normal='\E[m'
-localip='192.168.1.27'
+localip='192.168.1.18'
 echo "Select a server:"
 echo -e "  ${green}[1]${normal} DigitalOcean Server (Ubuntu 14.04 LAMP, SSH tunnel on 9999)"
 echo -e "  ${green}[2]${normal} Home Server Remote (Ubuntu 14.04 LAMP, SSH tunnel on 9999)"
