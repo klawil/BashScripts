@@ -4,7 +4,7 @@ red='\E[31m'
 blue='\E[34m'
 normal='\E[m'
 localip='192.168.1.18'
-basecommand="rsync --progress -aizR $(cat ~/.include.rsync)"
+basecommand="rsync --progress --log-file="~/backup.log" -aizR $(cat ~/.include.rsync)"
 echo "Select a server:"
 echo -e "  ${green}[1]${normal} Backup to local server"
 echo -e "  ${green}[2]${normal} Backup to remote server"
