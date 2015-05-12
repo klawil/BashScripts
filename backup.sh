@@ -3,7 +3,7 @@ green='\E[32m'
 red='\E[31m'
 blue='\E[34m'
 normal='\E[m'
-localip='192.168.1.18'
+localip=$(cat ~/BashScripts/localip)
 basecommand="rsync --progress --log-file="/home/william/backup.log" -aizR $(cat ~/.include.rsync)"
 echo "Select a server:"
 echo -e "  ${green}[1]${normal} Backup to local server"
