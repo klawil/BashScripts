@@ -19,4 +19,3 @@ gnome-terminal --maximize -e "tail -f /var/log/apache2/error.log"
 
 # Focus on workspace 1 then exit
 wmctrl -o 0,0
-exit
