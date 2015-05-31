@@ -3,7 +3,7 @@
 
 # Open google chrome in workspace 1
 wmctrl -o 0,0
-nohup google-chrome localhost &
+nohup google-chrome localhost > /dev/null &
 
 # Create a new bash window in workspace 2
 wmctrl -o 1366,0
