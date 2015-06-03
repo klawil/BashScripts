@@ -3,6 +3,8 @@
 ````
 alias push='~/BashScripts/push.sh'
 
+alias pull='~/BashScripts/pull.sh'
+
 alias remote='~/BashScripts/remote.sh'
 
 alias backup='~/BashScripts/backup.sh'
